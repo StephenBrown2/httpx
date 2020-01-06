@@ -29,6 +29,7 @@ _HTML5_FORM_ENCODING_RE = re.compile(
 def normalize_header_key(value: typing.AnyStr, encoding: str = None) -> bytes:
     """
     Coerce str/bytes into a strictly byte-wise HTTP header key.
+    Follows HTTP/2 spec: https://tools.ietf.org/html/rfc7540#section-8.1.2
     """
     if isinstance(value, bytes):
         return value.lower()
